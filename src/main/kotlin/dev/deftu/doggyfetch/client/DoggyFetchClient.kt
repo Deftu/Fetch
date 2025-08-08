@@ -1,6 +1,6 @@
-package dev.deftu.modtemplate.client
+package dev.deftu.doggyfetch.client
 
-object ModTemplateClient {
+object DoggyFetchClient {
 
     /**
      * Your client-only logic goes here...

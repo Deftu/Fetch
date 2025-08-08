@@ -1,6 +1,6 @@
 {
     "required": true,
-    "package": "dev.deftu.modtemplate.mixins",
+    "package": "dev.deftu.doggyfetch.mixins",
     "compatibilityLevel": "${java_version}",
     "injectors": {
         "defaultRequire": 1

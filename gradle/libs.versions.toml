@@ -1,0 +1,9 @@
+[versions]
+textile = "0.21.0"
+omnicore = "0.40.0"
+
+[libraries]
+textile = { group = "dev.deftu", name = "textile", version.ref = "textile" }
+omnicore = { group = "dev.deftu", name = "omnicore", version.ref = "omnicore" }
+flk = { group = "net.fabricmc", name = "fabric-language-kotlin" }
+fapi = { group = "net.fabricmc.fabric-api", name = "fabric-api" }

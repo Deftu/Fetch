@@ -1,6 +1,6 @@
-package dev.deftu.modtemplate
+package dev.deftu.doggyfetch
 
-object ModTemplate {
+object DoggyFetch {
 
     /**
      * Initialize common (both client & server) logic here.

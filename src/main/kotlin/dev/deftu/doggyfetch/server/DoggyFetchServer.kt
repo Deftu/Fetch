@@ -1,6 +1,6 @@
-package dev.deftu.modtemplate.server
+package dev.deftu.doggyfetch.server
 
-object ModTemplateServer {
+object DoggyFetchServer {
 
     /**
      * Your server-only logic goes here...

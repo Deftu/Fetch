@@ -1,6 +1,3 @@
-import dev.deftu.gradle.utils.MinecraftVersion
-import dev.deftu.gradle.utils.includeOrShade
-
 plugins {
     java
     kotlin("jvm")
@@ -10,7 +7,8 @@ plugins {
     id("dev.deftu.gradle.tools.bloom")
     id("dev.deftu.gradle.tools.shadow")
     id("dev.deftu.gradle.tools.minecraft.loom")
-    id("dev.deftu.gradle.tools.minecraft.releases")
+    id("dev.deftu.gradle.tools.minecraft.api")
+    id("dev.deftu.gradle.tools.minecraft.releases-v2")
 }
 
 toolkitMultiversion {
@@ -27,38 +25,25 @@ toolkitLoomHelper {
         useForgeMixin(modData.id)
     }
 
-    if (mcData.isForgeLike && mcData.version >= MinecraftVersion.VERSION_1_16_5) {
+    if (mcData.isForgeLike) {
         useKotlinForForge()
     }
 }
 
+// TODO: toolkitReleasesV2
+
 dependencies {
-    val textileVersion = "0.3.1"
-    val omnicoreVersion = "0.6.0"
-    modImplementation("dev.deftu:textile-$mcData:$textileVersion")
-    modImplementation("dev.deftu:omnicore-$mcData:$omnicoreVersion")
+    with(libs.textile.get()) {
+        api(this)
+        modImplementation("${module.group}:${module.name}-$mcData:${versionConstraint.requiredVersion}")
+    }
+
+    with(libs.omnicore.get()) {
+        modImplementation("${module.group}:${module.name}-$mcData:${versionConstraint.requiredVersion}")
+    }
 
     if (mcData.isFabric) {
-        modImplementation("net.fabricmc.fabric-api:fabric-api:${mcData.dependencies.fabric.fabricApiVersion}")
-        modImplementation("net.fabricmc:fabric-language-kotlin:${mcData.dependencies.fabric.fabricLanguageKotlinVersion}")
-    } else if (mcData.version <= MinecraftVersion.VERSION_1_12_2) {
-        implementation(includeOrShade(kotlin("stdlib-jdk8"))!!)
-        implementation(includeOrShade("org.jetbrains.kotlin:kotlin-reflect:1.6.10")!!)
-
-        modImplementation(includeOrShade("org.spongepowered:mixin:0.7.11-SNAPSHOT")!!)
-
-        includeOrShade("dev.deftu:textile-$mcData:$textileVersion")
-        includeOrShade("dev.deftu:omnicore-$mcData:$omnicoreVersion")
+        modImplementation(libs.fapi.map { "${it.module.group}:${it.module.name}:${mcData.dependencies.fabric.fabricApiVersion}" })
+        modImplementation(libs.flk.map { "${it.module.group}:${it.module.name}:${mcData.dependencies.fabric.fabricLanguageKotlinVersion}" })
     }
-}
-
-tasks {
-
-    fatJar {
-        if (mcData.isLegacyForge) {
-            relocate("dev.deftu.textile", "dev.deftu.favorita.textile")
-            relocate("dev.deftu.omnicore", "dev.deftu.favorita.omnicore")
-        }
-    }
-
 }
