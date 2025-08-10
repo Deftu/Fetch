@@ -17,7 +17,19 @@
         "main": [
             {
                 "adapter": "kotlin",
-                "value": "dev.deftu.fetch.entrypoint.FetchEntrypoint"
+                "value": "dev.deftu.doggyfetch.entrypoint.DoggyFetchEntrypoint"
+            }
+        ],
+        "client": [
+            {
+                "adapter": "kotlin",
+                "value": "dev.deftu.doggyfetch.entrypoint.DoggyFetchEntrypoint"
+            }
+        ],
+        "server": [
+            {
+                "adapter": "kotlin",
+                "value": "dev.deftu.doggyfetch.entrypoint.DoggyFetchEntrypoint"
             }
         ]
     },

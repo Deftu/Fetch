@@ -1,0 +1,4 @@
+{
+    "item": "minecraft:emerald",
+    "behavior": "doggyfetch:find_village"
+}

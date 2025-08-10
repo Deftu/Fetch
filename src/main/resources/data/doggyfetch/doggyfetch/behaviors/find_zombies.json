@@ -1,0 +1,12 @@
+{
+    "targets": [
+        "doggyfetch:drowned",
+        "doggyfetch:husk",
+        "doggyfetch:zombie",
+        "doggyfetch:zombie_horse",
+        "doggyfetch:zombie_villager",
+        "doggyfetch:zombified_piglin"
+    ],
+    "max_search_radius": 64,
+    "cooldown": 300
+}

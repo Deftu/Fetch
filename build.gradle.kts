@@ -28,6 +28,8 @@ toolkitLoomHelper {
     if (mcData.isForgeLike) {
         useKotlinForForge()
     }
+
+    useDevAuth("+")
 }
 
 // TODO: toolkitReleasesV2

@@ -1,0 +1,4 @@
+{
+    "items": ["minecraft:spider_eye", "minecraft:string"],
+    "behavior": "doggyfetch:find_spiders"
+}

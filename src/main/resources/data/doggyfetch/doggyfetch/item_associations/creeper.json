@@ -1,0 +1,4 @@
+{
+    "item": "minecraft:gunpowder",
+    "behavior": "doggyfetch:find_creeper"
+}

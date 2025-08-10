@@ -1,0 +1,5 @@
+{
+    "target": "doggyfetch:creeper",
+    "max_search_radius": 48,
+    "cooldown": 480
+}

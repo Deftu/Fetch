@@ -1,0 +1,9 @@
+{
+    "targets": [
+        "doggyfetch:skeleton",
+        "doggyfetch:stray",
+        "doggyfetch:witherskeleton"
+    ],
+    "max_search_radius": 64,
+    "cooldown": 300
+}

@@ -1,0 +1,4 @@
+{
+    "item": "minecraft:bone",
+    "behavior": "doggyfetch:find_skeletons"
+}

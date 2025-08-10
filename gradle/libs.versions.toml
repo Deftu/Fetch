@@ -1,6 +1,6 @@
 [versions]
 textile = "0.21.0"
-omnicore = "0.40.0"
+omnicore = "0.42.0"
 
 [libraries]
 textile = { group = "dev.deftu", name = "textile", version.ref = "textile" }

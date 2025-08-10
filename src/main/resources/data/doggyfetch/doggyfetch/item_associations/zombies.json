@@ -1,0 +1,4 @@
+{
+    "item": "minecraft:rotten_flesh",
+    "behavior": "doggyfetch:find_zombies"
+}

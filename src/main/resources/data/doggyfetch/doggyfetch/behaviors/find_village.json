@@ -1,0 +1,11 @@
+{
+    "targets": [
+        "doggyfetch:village_desert",
+        "doggyfetch:village_plains",
+        "doggyfetch:village_savanna",
+        "doggyfetch:village_snowy",
+        "doggyfetch:village_taiga"
+    ],
+    "max_search_radius": 512,
+    "cooldown": 72000
+}
